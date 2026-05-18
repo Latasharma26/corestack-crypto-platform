@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import { Terminal, Shield, Cpu, Activity, ArrowUpRight, Lock, Loader2, KeyRound, Unlock } from 'lucide-react'; // <-- Fixed: Loader2 explicitly added
 import { trpc } from './utils/trpc';
-import { encryptFromFrontend, decryptInFrontend } from './utils/frontendCrypto';
-
+  // import { encryptFromFrontend, decryptInFrontend } from './utils/frontendCrypto';
+  import { encryptFromFrontend, decryptInFrontend } from './utils/frontendCrypto';
+  
 export default function Home() {
   const [developerName, setDeveloperName] = useState('Vanshu');
 
