@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.ts",
   "type": "module",
-  "scripts": {
-  "build": "tsc",
-  "start": "npx tsx server.ts",
+"scripts": {
+  "build": "prisma generate && tsc",
+  "start": "prisma generate && npx tsx server.ts",
   "dev": "npx tsx watch server.ts"
 },
   "keywords": [],
