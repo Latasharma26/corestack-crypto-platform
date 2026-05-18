@@ -3,7 +3,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink } from '@trpc/client';
 import React, { useState } from 'react';
-import { trpc } from './utils/trpc';
+import { trpc, getBaseUrl } from './utils/trpc'; // 🔥 Fixed: getBaseUrl ko import kiya
 
 export function TRPCProvider({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -11,7 +11,8 @@ export function TRPCProvider({ children }: { children: React.ReactNode }) {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: 'http://localhost:4000/trpc', // Hamare Fastify backend ka URL
+          // 🔥 MAGIC FIXED: Ab ye localhost ko bypass karke direct Render cloud service hit karega
+          url: `${getBaseUrl()}/trpc`, 
         }),
       ],
     })
