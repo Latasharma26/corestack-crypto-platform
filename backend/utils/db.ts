@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
-// 🔥 DIRECT IPv4 ENGINE CONNECTION ROUTING PARAMETERS
-const databaseUrl = 'postgresql://postgres:VanshuSharma%4002@db.gviobmbmxpnpfvxwdlar.supabase.co:5432/postgres?sslmode=require&connection_limit=1';
+// 🔥 DIRECT CONNECTION POOLER OVERRIDE - BYPASSING DASHBOARD ERRORS
+const databaseUrl = 'postgres://postgres:VanshuSharma%4002@aws-0-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true&sslmode=require';
 
 export const prisma = new PrismaClient({
   datasources: {
